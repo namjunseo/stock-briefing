@@ -36,6 +36,16 @@ CREATE TABLE IF NOT EXISTS prices (
     collected_at TEXT NOT NULL,
     UNIQUE (ticker, date)
 );
+
+CREATE TABLE IF NOT EXISTS llm_calls (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    model         TEXT NOT NULL,
+    purpose       TEXT NOT NULL,           -- e.g. 'issue_summary'
+    input_tokens  INTEGER NOT NULL,
+    output_tokens INTEGER NOT NULL,
+    latency_ms    INTEGER NOT NULL,
+    created_at    TEXT NOT NULL
+);
 """
 
 
@@ -102,3 +112,14 @@ def insert_prices(rows: list[dict]) -> int:
             )
             inserted += cur.rowcount
     return inserted
+
+
+def log_llm_call(model: str, purpose: str, input_tokens: int,
+                 output_tokens: int, latency_ms: int) -> None:
+    with get_conn() as conn:
+        conn.execute(
+            "INSERT INTO llm_calls "
+            "(model, purpose, input_tokens, output_tokens, latency_ms, created_at) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            (model, purpose, input_tokens, output_tokens, latency_ms, utcnow()),
+        )
