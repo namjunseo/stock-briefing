@@ -1,0 +1,46 @@
+name: Daily briefing
+
+on:
+  schedule:
+    # 22:15 UTC = 07:15 KST (GitHub cron uses UTC; may start 5-15 min late)
+    - cron: "15 22 * * *"
+  workflow_dispatch: {}  # allows manual runs from the Actions tab
+
+permissions:
+  contents: write  # needed to commit the updated DB back
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect data
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+        run: python collect.py
+
+      - name: Send briefing
+        env:
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python send_briefing.py
+
+      - name: Commit updated DB
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f stock_briefing.db
+          git commit -m "chore: update data ($(date -u +'%Y-%m-%d'))" || echo "no changes to commit"
+          git push
