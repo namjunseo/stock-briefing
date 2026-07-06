@@ -37,6 +37,11 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python send_briefing.py
 
+      - name: Index articles for RAG
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python index.py
+
       - name: Commit updated DB
         run: |
           git config user.name "github-actions[bot]"
