@@ -30,6 +30,7 @@ ALIASES: dict[str, list[dict]] = {
     "NVDA": [{"alias": "엔비디아"}, {"alias": "NVIDIA"}],
     "PLTR": [{"alias": "팔란티어"}, {"alias": "Palantir"}],
     "INTC": [{"alias": "인텔"}, {"alias": "Intel"}],
+    "SPCX": [{"alias": "스페이스X"}, {"alias": "스페이스엑스"}, {"alias": "SpaceX"}],
 }
 
 _NAMES = {**WATCHLIST_KR, **WATCHLIST_US}

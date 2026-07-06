@@ -54,6 +54,7 @@ WATCHLIST_US = {
     "NVDA": "엔비디아",
     "PLTR": "팔란티어",
     "INTC": "인텔",
+    "SPCX": "스페이스X",
 }
 
 INDICES = {
