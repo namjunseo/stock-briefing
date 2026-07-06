@@ -5,6 +5,7 @@ Usage:
 """
 from src import db
 from src.collectors.dart import collect_dart
+from src.collectors.edgar import collect_edgar
 from src.collectors.news import collect_news
 from src.collectors.price import collect_prices
 
@@ -15,7 +16,7 @@ def main() -> None:
     articles = collect_news()
     n_articles = db.insert_articles(articles)
 
-    disclosures = collect_dart()
+    disclosures = collect_dart() + collect_edgar()
     n_disclosures = db.insert_disclosures(disclosures)
 
     prices = collect_prices()

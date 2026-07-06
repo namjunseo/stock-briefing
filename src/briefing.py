@@ -40,7 +40,7 @@ def get_price_changes(tickers: dict[str, str]) -> list[dict]:
 
 def get_watchlist_disclosures(limit: int = 10) -> list[dict]:
     """Recent disclosures of watchlist companies only."""
-    names = tuple(WATCHLIST_KR.values())
+    names = tuple(WATCHLIST_KR.values()) + tuple(WATCHLIST_US.values())
     placeholders = ",".join("?" * len(names))
     with db.get_conn() as conn:
         rows = conn.execute(

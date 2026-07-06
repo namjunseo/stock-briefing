@@ -13,11 +13,15 @@ DB_PATH = os.environ.get("DB_PATH", "stock_briefing.db")
 GEMINI_MODEL = "gemini-3.1-flash-lite"
 
 EDGAR_USER_AGENT = "stock-briefing namjunseo051219@gmail.com"
+# EDGAR filing types worth surfacing in a briefing
+EDGAR_FORMS = {"8-K", "10-Q", "10-K"}
 
-# --- News sources (KR for now; US feeds added in week 5) ---
+# --- News sources ---
 RSS_FEEDS = [
     {"market": "KR", "source": "hankyung_finance", "url": "https://www.hankyung.com/feed/finance"},
     {"market": "KR", "source": "hankyung_economy", "url": "https://www.hankyung.com/feed/economy"},
+    {"market": "US", "source": "marketwatch_top", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories"},
+    {"market": "US", "source": "yahoo_finance", "url": "https://finance.yahoo.com/news/rssindex"},
 ]
 
 # Some feed servers reject default library User-Agents
@@ -36,7 +40,6 @@ WATCHLIST_KR = {
     "066570.KS": "LG전자",
 }
 
-# NOTE: SpaceX is not publicly traded (no ticker) -> cannot be included.
 WATCHLIST_US = {
     "SNDK": "샌디스크",
     "ASML": "ASML",
