@@ -2,26 +2,34 @@
 from src.config import WATCHLIST_KR, WATCHLIST_US
 
 # Extra aliases beyond the official names in config.
-# "exclude": if any of these substrings is present around the match context,
-# the alias alone is too ambiguous -> skip (e.g. 메타버스 vs 메타).
+# "exclude": skip the match when an ambiguous longer phrase is present
+# (e.g. 메타버스 contains 메타 but is not the company Meta).
 ALIASES: dict[str, list[dict]] = {
-    "005930.KS": [{"alias": "삼성전자"}, {"alias": "삼전"}],
+    # --- KR ---
     "000660.KS": [{"alias": "SK하이닉스"}, {"alias": "하이닉스"}, {"alias": "삼전닉스"}],
-    "373220.KS": [{"alias": "LG에너지솔루션"}, {"alias": "LG엔솔"}],
-    "207940.KS": [{"alias": "삼성바이오로직스"}, {"alias": "삼바"}],
+    "009150.KS": [{"alias": "삼성전기"}],
+    "402340.KS": [{"alias": "SK스퀘어"}],
     "005380.KS": [{"alias": "현대차"}, {"alias": "현대자동차"}],
-    "051910.KS": [{"alias": "LG화학"}],
+    "005930.KS": [{"alias": "삼성전자"}, {"alias": "삼전"}],
     "035420.KS": [{"alias": "네이버"}, {"alias": "NAVER"}],
-    "035720.KS": [{"alias": "카카오"}],
-    "005490.KS": [{"alias": "포스코홀딩스"}, {"alias": "POSCO홀딩스"}, {"alias": "포스코"}],
-    "105560.KS": [{"alias": "KB금융"}],
-    "AAPL": [{"alias": "애플"}, {"alias": "Apple"}],
-    "MSFT": [{"alias": "마이크로소프트"}],
-    "NVDA": [{"alias": "엔비디아"}, {"alias": "NVIDIA"}],
-    "GOOGL": [{"alias": "알파벳"}, {"alias": "구글"}],
-    "AMZN": [{"alias": "아마존"}],
-    "TSLA": [{"alias": "테슬라"}],
+    "066570.KS": [{"alias": "LG전자"}],
+    # --- US ---
+    "SNDK": [{"alias": "샌디스크"}, {"alias": "SanDisk"}],
+    "ASML": [{"alias": "ASML"}],
+    "MU": [{"alias": "마이크론"}, {"alias": "Micron"}],
     "META": [{"alias": "메타", "exclude": ["메타버스"]}, {"alias": "Meta"}],
+    "AMD": [{"alias": "AMD"}],
+    "TSM": [{"alias": "TSMC"}],
+    "TSLA": [{"alias": "테슬라"}, {"alias": "Tesla"}],
+    "MSFT": [{"alias": "마이크로소프트"}, {"alias": "Microsoft"}],
+    "AVGO": [{"alias": "브로드컴"}, {"alias": "Broadcom"}],
+    "GOOGL": [{"alias": "알파벳"}, {"alias": "구글"}, {"alias": "Google"}],
+    "AAPL": [{"alias": "애플"}, {"alias": "Apple"}],
+    "MRVL": [{"alias": "마벨"}, {"alias": "Marvell"}],
+    "AMZN": [{"alias": "아마존"}, {"alias": "Amazon"}],
+    "NVDA": [{"alias": "엔비디아"}, {"alias": "NVIDIA"}],
+    "PLTR": [{"alias": "팔란티어"}, {"alias": "Palantir"}],
+    "INTC": [{"alias": "인텔"}, {"alias": "Intel"}],
 }
 
 _NAMES = {**WATCHLIST_KR, **WATCHLIST_US}

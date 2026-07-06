@@ -23,30 +23,37 @@ RSS_FEEDS = [
 # Some feed servers reject default library User-Agents
 HTTP_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
-# --- Watchlist (start small; expand later) ---
-# NOTE: full KOSPI200 listing requires KRX login since 2025-12, so we manage
-# a manual watchlist instead. yfinance format: KOSPI=.KS, KOSDAQ=.KQ
+# --- Watchlist ---
+# KR name must exactly match the DART corp_name for disclosure filtering.
+# yfinance format: KOSPI=.KS, KOSDAQ=.KQ
 WATCHLIST_KR = {
-    "005930.KS": "삼성전자",
     "000660.KS": "SK하이닉스",
-    "373220.KS": "LG에너지솔루션",
-    "207940.KS": "삼성바이오로직스",
-    "005380.KS": "현대차",
-    "051910.KS": "LG화학",
+    "009150.KS": "삼성전기",
+    "402340.KS": "SK스퀘어",
+    "005380.KS": "현대자동차",
+    "005930.KS": "삼성전자",
     "035420.KS": "NAVER",
-    "035720.KS": "카카오",
-    "005490.KS": "POSCO홀딩스",
-    "105560.KS": "KB금융",
+    "066570.KS": "LG전자",
 }
 
+# NOTE: SpaceX is not publicly traded (no ticker) -> cannot be included.
 WATCHLIST_US = {
-    "AAPL": "Apple",
-    "MSFT": "Microsoft",
-    "NVDA": "NVIDIA",
-    "GOOGL": "Alphabet",
-    "AMZN": "Amazon",
-    "TSLA": "Tesla",
-    "META": "Meta",
+    "SNDK": "샌디스크",
+    "ASML": "ASML",
+    "MU": "마이크론",
+    "META": "메타",
+    "AMD": "AMD",
+    "TSM": "TSMC",
+    "TSLA": "테슬라",
+    "MSFT": "마이크로소프트",
+    "AVGO": "브로드컴",
+    "GOOGL": "알파벳",
+    "AAPL": "애플",
+    "MRVL": "마벨",
+    "AMZN": "아마존",
+    "NVDA": "엔비디아",
+    "PLTR": "팔란티어",
+    "INTC": "인텔",
 }
 
 INDICES = {
