@@ -12,7 +12,7 @@ permissions:
 jobs:
   briefing:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -29,6 +29,11 @@ jobs:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
         run: python collect.py
 
+      - name: Index articles for RAG
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python index.py
+
       - name: Send briefing
         env:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
@@ -37,12 +42,8 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python send_briefing.py
 
-      - name: Index articles for RAG
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python index.py
-
       - name: Commit updated DB
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

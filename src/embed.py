@@ -27,7 +27,7 @@ def _embed_batch(batch: list[str], max_retries: int = 3) -> list[list[float]]:
             resp = client.models.embed_content(model=EMBED_MODEL, contents=batch)
             return [e.values for e in resp.embeddings]
         except errors.ClientError as e:
-            if getattr(e, "code", None) == 429 and attempt < max_retries - 1:
+            if (getattr(e, "code", None) == 429 or "429" in str(e)) and attempt < max_retries - 1:
                 wait = 30 * (attempt + 1)
                 print(f"[embed] rate limited; retrying in {wait}s")
                 time.sleep(wait)

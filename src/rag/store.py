@@ -3,6 +3,8 @@
 At our scale (thousands of articles) exact brute-force cosine search is
 faster and simpler than running a vector DB. Swap for one if N grows large.
 """
+from datetime import datetime, timedelta, timezone
+
 import numpy as np
 
 from src import db
@@ -46,6 +48,33 @@ def index_new_articles(batch_limit: int = 500) -> int:
                 (r["id"], EMBED_MODEL, len(v), v.tobytes()),
             )
     return len(rows)
+
+
+def get_recent_articles_with_vectors(hours: int = 24) -> tuple[list[dict], list[list[float]]]:
+    """Recent articles that already have stored vectors (no new API calls).
+
+    Articles not yet indexed are simply excluded — run index_new_articles first.
+    """
+    init_store()
+    since = (datetime.now(timezone.utc) - timedelta(hours=hours)).isoformat(
+        timespec="seconds")
+    with db.get_conn() as conn:
+        rows = conn.execute(
+            "SELECT a.id, a.market, a.source, a.title, a.url, e.vector "
+            "FROM articles a JOIN article_embeddings e ON e.article_id = a.id "
+            "WHERE a.collected_at >= ? ORDER BY a.id",
+            (since,),
+        ).fetchall()
+
+    articles = [
+        {"id": r["id"], "market": r["market"], "source": r["source"],
+         "title": r["title"], "url": r["url"]}
+        for r in rows
+    ]
+    vectors = [
+        np.frombuffer(r["vector"], dtype=np.float32).tolist() for r in rows
+    ]
+    return articles, vectors
 
 
 def search(query_vector: list[float], top_k: int = 8,
