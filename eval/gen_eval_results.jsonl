@@ -1,0 +1,30 @@
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처를 기반으로 삼성전자 성과급 이슈의 현황, 노사 갈등, 실적 영향 및 시장 반응을 정확하게 요약하였으며, 답변 불가능한 영역에 대해 별도의 허위 정보를 생성하지 않음.", "question": "삼성전자 성과급 이슈 뭐야", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 8개 모두를 검토한 결과 마이크론 CEO의 발언에 대한 언급이 없으므로, 이를 인정하고 답변한 것은 적절함.", "question": "마이크론 CEO가 최근에 한 발언 있어?", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에 샌디스크 CFO에 대한 정보가 없으며, 시스템이 이를 정확히 인지하여 답변하였습니다.", "question": "샌디스크 CFO 누구야", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처를 완벽하게 활용하여 젠슨 황의 발언을 정확히 인용했고, 언급되지 않은 부분은 솔직하게 인정함.", "question": "엔비디아 젠슨 황 최근 발언 정리해줘", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "질문자인 '확정 여부'에 대해 출처에 근거하여 확정된 바 없음을 명확히 밝히고 관련 정황만 제시함.", "question": "애플 아이폰18 가격 인상 확정된거야?", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에서 브로드컴의 신용등급 변동과 관련된 내용을 전혀 찾을 수 없으므로, 이를 인정하고 답변한 것은 적절함.", "question": "브로드컴 최근 신용등급 변동 있었어?", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에서 TSMC 애리조나 공장에 관한 정보를 찾을 수 없음을 명확히 인지하고, 언급된 출처의 내용을 정확히 파악하여 답변함.", "question": "TSMC 애리조나 공장 진행상황 어때", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에 마벨 테크놀로지의 M&A 관련 정보가 존재하지 않음을 정확히 파악함.", "question": "마벨 테크놀로지 최근 M&A 소식 있어?", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 모든 출처를 정확히 반영하였으며, 사실관계에 오류가 없음.", "question": "SK하이닉스 ADR 상장 진행상황", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에 마이크론 반독점 소송 관련 정보가 없음을 정확히 인지하고, 사실에 기반하여 답변함.", "question": "마이크론 반독점 소송 지금 어떻게 됐어", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에서 해당 질문에 대한 정보를 찾을 수 없음을 정확히 인지하고, 출처에 존재하는 투자 및 주가 관련 정보와 대조하여 답변함.", "question": "인텔 파운드리 매각설 진짜야?", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처를 기반으로 계약의 존재와 기간을 정확하게 설명하였습니다.", "question": "애플-브로드컴 공급계약 세부 내용이 뭐야", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에서 노사협상 결과가 없음을 정확히 명시하고, 출처를 바탕으로 현 상황을 적절히 기술함.", "question": "삼성전자 노사협상 결과 나왔어?", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처를 바탕으로 중국의 H200 구매 허용과 미국의 반도체 장비 유출 경계라는 최신 상황을 정확하게 요약하였습니다.", "question": "엔비디아 중국 수출 규제 최신 상황 알려줘", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에는 오픈AI의 IPO 일정과 관련된 정보가 전혀 없으므로, 이를 모른다고 답변한 것은 정확합니다.", "question": "오픈AI IPO 일정 다시 나왔어?", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에서 질문에 대한 답을 찾을 수 없음을 정확히 인지하고, 언급된 내용의 범위를 출처에 기반하여 적절히 설명함.", "question": "메타 클라우드 사업 진출 세부 계획이 뭐야", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처 내의 사실만을 근거로 코스피 상승 원인을 정확하고 객관적으로 요약함.", "question": "코스피 최근 왜 올랐어", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제시된 출처 내에서 나스닥의 변동 요인(반도체주 매도세, 중동 리스크, 반등 요인)을 정확하게 발췌하여 답변함.", "question": "나스닥 왜 이렇게 흔들려", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "질문한 필라델피아 반도체지수에 대한 정보가 없음을 정확히 명시하고, 제공된 출처 내에서 반도체 시장 전반의 상황을 적절하게 인용함.", "question": "필라델피아 반도체지수 요즘 어때", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처를 기반으로 원·달러 환율 하락 원인을 정확하게 인용하여 답변함.", "question": "원달러 환율 왜 이렇게 빠졌어", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처를 기반으로 질문의 원인을 정확히 파악하였으며, 수치 및 사실 관계를 출처에 근거하여 오류 없이 기술함.", "question": "이번주 코스닥은 왜 계속 빠지는거야", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처 [1]의 내용을 바탕으로 정확하게 답변하였으며, 질문에 대해 출처 내에서 적절한 근거를 확보하였습니다.", "question": "VIX 지수 요즘 어때", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "질문인 '미국 국채 금리'에 대한 직접적인 정보가 출처에 없음을 정확히 인지하고, 제공된 출처 내에서 혼동의 여지가 있는 부분[1]을 명확히 구분하여 답변함.", "question": "미국 국채 금리 최근 흐름이 어때", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제시된 출처 내에서 샌디스크 관련 언급을 정확히 인용하였고, 추가 정보가 없음을 명확히 명시함.", "question": "샌디스크 관련 소식 최신으로 알려줘", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에는 웨스턴디지털의 실적 관련 내용이 없으며, 시스템이 이를 정확히 인지하고 모른다고 답하였습니다.", "question": "웨스턴디지털 실적 어떻게 나왔어", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에서 마이클 버리의 최근 포지션에 관한 정보를 찾을 수 없으며, 시스템이 이를 정확히 인지하여 답변함.", "question": "마이클 버리 최근 포지션 어떻게 바뀌었어", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 1~8번 내에 세레브라스 시스템즈(Cerebras Systems)와 관련된 내용은 존재하지 않으므로, 시스템이 '찾지 못했다'고 응답한 것은 적절함.", "question": "세레브라스 시스템즈 최근 뉴스 알려줘", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에는 ASML의 실적 발표일에 관한 정보가 존재하지 않으므로, 이를 알 수 없다고 답변한 것은 적절합니다.", "question": "ASML 다음 실적 발표 언제야", "has_answer": false}
+{"faithfulness": 5, "hallucination": false, "admits_gap": false, "comment": "제공된 출처를 기반으로 모건스탠리의 반도체 및 하이퍼스케일러 관련 견해를 정확하게 요약하였습니다.", "question": "모건스탠리 반도체 섹터 리포트 최근 내용 뭐야", "has_answer": true}
+{"faithfulness": 5, "hallucination": false, "admits_gap": true, "comment": "제공된 출처 내에는 골드만삭스의 코스피 목표지수 전망에 대한 정보가 없음을 정확히 인지하고 이를 투명하게 밝혔습니다.", "question": "골드만삭스 코스피 목표지수 최신 전망 알려줘", "has_answer": false}
