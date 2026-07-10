@@ -109,6 +109,7 @@ def search(query_vector: list[float], top_k: int = 8,
     order = np.argsort(scores)[::-1][:top_k]
     return [
         {
+            "id": rows[i]["article_id"],
             "score": float(scores[i]),
             "title": rows[i]["title"],
             "url": rows[i]["url"],
