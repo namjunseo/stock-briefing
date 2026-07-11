@@ -1,4 +1,10 @@
-"""Tools the agent can call. All numbers come straight from the DB."""
+"""Tools the agent can call. All numbers come straight from the DB.
+
+Diagnostics go to stderr: stdout must stay clean because the MCP server
+uses it as the protocol channel.
+"""
+import sys
+
 from src import db
 from src.config import INDICES, WATCHLIST_KR, WATCHLIST_US
 from src.embed import embed_texts
@@ -13,6 +19,10 @@ _INDEX_NAMES = {
     "환율": "USDKRW=X", "원달러": "USDKRW=X", "달러": "USDKRW=X",
 }
 _ALL_NAMES = {**WATCHLIST_KR, **WATCHLIST_US, **INDICES}
+
+
+def _log(msg: str) -> None:
+    print(msg, file=sys.stderr)
 
 
 def _resolve_ticker(name: str) -> str | None:
@@ -33,7 +43,7 @@ def get_price(name: str) -> dict:
     Args:
         name: 회사명, 티커, 또는 지수명. 예: '삼성전자', 'NVDA', '코스피', '환율'
     """
-    print(f"  [tool] get_price({name!r})")
+    _log(f"  [tool] get_price({name!r})")
     ticker = _resolve_ticker(name)
     if ticker is None:
         return {"error": f"'{name}'은(는) 관심종목/지수 목록에 없어 시세를 조회할 수 없음"}
@@ -64,7 +74,7 @@ def search_news(query: str) -> list[dict]:
     Args:
         query: 검색할 주제나 질문. 예: 'SK하이닉스 ADR 상장'
     """
-    print(f"  [tool] search_news({query!r})")
+    _log(f"  [tool] search_news({query!r})")
     q_vec = embed_texts([query])[0]
     hits = vector_search(q_vec, top_k=8)
     return [
@@ -79,7 +89,7 @@ def get_disclosures(company: str) -> list[dict]:
     Args:
         company: 회사명. 예: '삼성전자', '애플'
     """
-    print(f"  [tool] get_disclosures({company!r})")
+    _log(f"  [tool] get_disclosures({company!r})")
     with db.get_conn() as conn:
         rows = conn.execute(
             "SELECT corp_name, title, disclosed_at, market FROM disclosures "

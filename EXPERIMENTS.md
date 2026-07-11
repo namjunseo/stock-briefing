@@ -182,3 +182,13 @@
 **다음 액션**
 - [ ] 도구를 MCP 서버로 노출 (채용 키워드 대응)
 - [ ] 데이터 신선도 규칙 검토 (몇 턴 이상 지난 시세는 재조회)
+
+## 2026-07-11 — MCP 서버화
+
+**구현**: agent 도구 3개를 FastMCP로 stdio MCP 서버로 노출, Claude Desktop에 등록
+
+**확인**
+- Claude Desktop이 get_price/search_news/get_disclosures를 자동 인식·호출, 실 DB 데이터로 응답
+- 설계 포인트: stdout이 MCP 프로토콜 채널이므로 도구 진단 출력을 stderr로 분리,
+  클라이언트가 임의 cwd에서 실행하므로 서버 시작 시 repo 루트로 앵커링
+- 같은 도구 코드를 자체 에이전트(function calling)와 MCP 서버가 공유 → 중복 없음
