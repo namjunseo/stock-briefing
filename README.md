@@ -6,7 +6,9 @@
 > 매일 아침 7시 15분(KST), GitHub Actions가 수집 → 인덱싱 → 브리핑 발송을 자동 실행합니다.
 > 전 기간 **무료 티어만으로 운영** (LLM API 유료 환산 비용 기준 총 22원 상당, 실지출 $0).
 
-<!-- 스크린샷: docs/images/briefing.png (이메일 브리핑), app.png (Streamlit), mcp.png (Claude Desktop 연동) -->
+| 데일리 브리핑 메일 | 에이전트 Q&A | Claude Desktop (MCP) |
+|---|---|---|
+| ![briefing](docs/images/briefing.png) | ![app](docs/images/app.png) | ![mcp](docs/images/mcp.png) |
 
 ## 주요 기능
 
