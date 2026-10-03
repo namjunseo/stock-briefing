@@ -19,7 +19,7 @@ import pandas as pd
 import requests
 import streamlit as st
 
-DB_RAW_URL = "https://github.com/namjunseo/stock-briefing/raw/main/stock_briefing.db"
+DB_RAW_URL = "https://github.com/namjunseo/stock-briefing/releases/download/data/stock_briefing.db"
 DB_MAX_AGE_S = 6 * 3600
 
 st.set_page_config(page_title="주식 데일리 브리핑", page_icon="📈", layout="wide")
