@@ -95,6 +95,7 @@ git clone https://github.com/namjunseo/stock-briefing.git
 cd stock-briefing
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+gh release download data --pattern stock_briefing.db --repo namjunseo/stock-briefing
 
 cat > .env << 'ENV'
 DART_API_KEY=...        # opendart.fss.or.kr
