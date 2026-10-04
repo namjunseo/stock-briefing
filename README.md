@@ -47,7 +47,7 @@ Claude Desktop 등 MCP 클라이언트가 이 프로젝트의 데이터를 직�
 | LLM / 임베딩 | Gemini API 무료 티어 (flash-lite / embedding-001) | 호출부 추상화로 provider 교체 가능 |
 | 데이터 | 한국경제 RSS, MarketWatch, Yahoo Finance, DART, SEC EDGAR, yfinance | 전부 무료 소스 |
 | 저장 | SQLite + numpy 브루트포스 벡터 검색 | 수천 건 규모에선 벡터DB보다 단순·충분 (규모 확장 시 교체 지점 명시) |
-| 자동화 | GitHub Actions (수집→인덱싱→발송→DB 커밋) | 실패 시에도 수집분 보존 (`if: always()`) |
+| 자동화 | GitHub Actions (수집→인덱싱→발송→DB 업로드) | DB는 git 대신 Release 첨부파일로 관리 (100MB 파일 한도 회피), 실패 시에도 수집분 보존 |
 | 발송 | Gmail SMTP, HTML 템플릿 | |
 | 인터페이스 | CLI 챗 / Streamlit / MCP 서버 (FastMCP) | |
 
